@@ -42,8 +42,15 @@ console.log(listaDeSuper);
 
 
 function logItems(arreglo) {
+    let listaEnPagina = document.getElementById("productos");
+    listaEnPagina.replaceChildren();
+
     arreglo.forEach(function(producto, indice) {
         console.log(indice + ": " + producto);
+
+        let elemento = document.createElement("li");
+        elemento.textContent = indice + ": " + producto;
+        listaEnPagina.appendChild(elemento);
     });
 }
 
